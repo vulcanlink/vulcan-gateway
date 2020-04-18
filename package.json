@@ -1,8 +1,12 @@
 {
-    "name": "api",
+    "name": "vulcan-gateway",
     "version": "1.0.0",
-    "description": "",
+    "description": "Vulcan Link Federated GraphQL Gateway with multiple services",
     "main": "index.js",
+    "private": false,
+    "copyright": "Copyright 2020 Vulcan Link",
+    "license": "MIT",
+    "author": "Leo Vigna",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start:chainlink": "cd services/chainlink-api && npm run start",
@@ -22,8 +26,6 @@
         "dev-gateway": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
         "dev": "npm run dev-gateway"
     },
-    "author": "",
-    "license": "ISC",
     "dependencies": {
         "@apollo/gateway": "^0.14.1",
         "apollo-server": "^2.12.0"
