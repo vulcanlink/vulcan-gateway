@@ -1,0 +1,39 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start:chainlink": "cd services/chainlink-api && npm run start",
+        "start:vulcan": "cd services/vulcan-api && npm run start",
+        "start-services": "concurrently \"npm:start:*\"",
+        "start-gateway": "node dist/server",
+        "start": "npm run start-gateway",
+        "clean": "rm -rf dist",
+        "build:chainlink": "cd services/chainlink-api && npm run build",
+        "build:vulcan": "cd services/vulcan-api && npm run build",
+        "build-services": "concurrently \"npm:build:*\"",
+        "build-gateway": "npm -s run clean && tsc",
+        "build": "npm run build-gateway",
+        "dev:chainlink": "cd services/chainlink-api && npm run dev",
+        "dev:vulcan": "cd services/vulcan-api && npm run dev",
+        "dev-services": "concurrently \"npm:dev:*\"",
+        "dev-gateway": "ts-node-dev --no-notify --respawn --transpileOnly src/server",
+        "dev": "npm run dev-gateway"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@apollo/gateway": "^0.14.1",
+        "apollo-server": "^2.12.0"
+    },
+    "devDependencies": {
+        "@types/node": "^13.7.7",
+        "concurrently": "^5.1.0",
+        "dotenv": "^8.2.0",
+        "ts-node": "^8.6.2",
+        "ts-node-dev": "^1.0.0-pre.44",
+        "typescript": "^3.8.3"
+    }
+}

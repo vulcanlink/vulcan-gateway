@@ -1,0 +1,6 @@
+[submodule "services/vulcan-api"]
+	path = services/vulcan-api
+	url = https://github.com/leovigna/vulcan-api
+[submodule "services/chainlink-api"]
+	path = services/chainlink-api
+	url = https://github.com/leovigna/chainlink-api
