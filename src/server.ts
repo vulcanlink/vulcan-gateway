@@ -5,6 +5,9 @@ if (process.env.NODE_ENV === 'development') {
     require('dotenv').config()
 }
 
+// The ApolloGateway stitches multiple GraphQL services as one
+// This enables us to query the native Chainlink data structure
+// and our custom metadata on one endpoint while keeping them isolated.
 const gateway = new ApolloGateway({
     serviceList: [
         { name: 'chainlink', url: process.env.CHAINLINK_SERVICE },
